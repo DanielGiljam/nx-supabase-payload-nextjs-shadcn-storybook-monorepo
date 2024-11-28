@@ -1,0 +1,33 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "bundler",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@my-project/payload": ["libs/payload/src/index.ts"],
+      "@my-project/payload/config": ["libs/payload/src/payload.config.ts"],
+      "@my-project/payload/types": ["libs/payload/src/payload-types.ts"],
+      "@my-project/react-components/components/*": ["libs/react-components/src/components/*"],
+      "@my-project/react-components/ui/*": ["libs/react-components/src/ui/*"],
+      "@my-project/react-components/lib/*": ["libs/react-components/src/lib/*"],
+      "@my-project/react-components/hooks/*": ["libs/react-components/src/hooks/*"],
+      "@my-project/react-components": ["libs/react-components/src/index.ts"],
+      "@my-project/react-components/server": [
+        "libs/react-components/src/server.ts"
+      ],
+      "@payload-config": ["apps/nextjs-app/src/payload.config.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

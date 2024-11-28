@@ -1,0 +1,15 @@
+{
+  "name": "@my-project/payload",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:types": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload generate:types",
+    "postinstall": "pnpm generate:types"
+  },
+  "exports": {
+    "./config": "./src/payload.config.ts",
+    "./types": "./src/payload-types.ts"
+  },
+  "dependencies": {}
+}
