@@ -58,6 +58,11 @@
   "targetDefaults": {
     "e2e-ci--**/*": {
       "dependsOn": ["^build"]
+    },
+    "test": {
+      "options": {
+        "passWithNoTests": true
+      }
     }
   },
   "generators": {
