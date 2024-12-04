@@ -59,6 +59,12 @@
     "e2e-ci--**/*": {
       "dependsOn": ["^build"]
     },
+    "storybook": {
+      "options": {
+        "open": false,
+        "port": 3001
+      }
+    },
     "test": {
       "options": {
         "passWithNoTests": true
