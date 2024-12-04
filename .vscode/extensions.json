@@ -1,7 +1,10 @@
 {
   "recommendations": [
+    "dbaeumer.vscode-eslint",
     "denoland.vscode-deno",
+    "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
-    "firsttris.vscode-jest-runner"
+    "firsttris.vscode-jest-runner",
+    "tamasfe.even-better-toml"
   ]
 }
