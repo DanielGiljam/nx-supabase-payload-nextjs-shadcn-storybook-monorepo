@@ -1,7 +1,7 @@
 //@ts-check
 
-const { composePlugins, withNx } = require('@nx/next');
-const { withPayload } = require('@payloadcms/next/withPayload');
+const { composePlugins, withNx } = require("@nx/next");
+const { withPayload } = require("@payloadcms/next/withPayload");
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
