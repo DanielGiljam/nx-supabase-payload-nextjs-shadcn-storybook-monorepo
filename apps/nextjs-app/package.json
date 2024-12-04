@@ -1,10 +1,10 @@
 {
-  "name": "@my-project/nextjs-app",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "generate:importmap": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts tsx ./scripts/generate-import-map.ts",
-    "postinstall": "pnpm generate:importmap"
-  }
+    "name": "@my-project/nextjs-app",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "generate:importmap": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts tsx ./scripts/generate-import-map.ts",
+        "postinstall": "pnpm generate:importmap"
+    }
 }

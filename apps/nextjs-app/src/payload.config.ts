@@ -1,1 +1,1 @@
-export { default as default } from "@my-project/payload/config";
+export {default as default} from "@my-project/payload/config";
