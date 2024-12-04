@@ -3,7 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "typecheck": "nx affected --target=typecheck",
+    "lint": "nx affected --target=lint",
+    "fix": "nx affected --target=lint --fix",
+    "prettier": "nx format:check",
+    "format": "nx format:write",
+    "lp": "./scripts/lint-and-prettier.bash",
+    "tlp": "./scripts/typecheck-lint-and-prettier.bash",
+    "ff": "./scripts/fix-and-format.bash",
+    "tff": "./scripts/typecheck-fix-and-format.bash"
+  },
   "dependencies": {
     "@my-project/payload": "workspace:*",
     "@payloadcms/db-postgres": "^3.2.1",
