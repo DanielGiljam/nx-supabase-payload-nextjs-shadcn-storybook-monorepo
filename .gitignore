@@ -45,6 +45,11 @@ Thumbs.db
 .next
 out
 
+# Storybook
 storybook-static
 
+# TypeScript
+tsconfig.tsbuildinfo
+
+# .env files
 .env*.local
