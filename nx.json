@@ -53,6 +53,9 @@
         "testStorybookTargetName": "test-storybook",
         "staticStorybookTargetName": "static-storybook"
       }
+    },
+    {
+      "plugin": "@nx/js/typescript"
     }
   ],
   "targetDefaults": {
