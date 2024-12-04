@@ -1,5 +1,9 @@
 # Add files here to ignore them from prettier formatting
+/pnpm-lock.yaml
+/libs/payload/src/payload-types.ts
 /dist
 /coverage
+/apps/nextjs-app/.next
+/apps/nextjs-app/src/app/(payload)/admin/importMap.js
 /.nx/cache
 /.nx/workspace-data
