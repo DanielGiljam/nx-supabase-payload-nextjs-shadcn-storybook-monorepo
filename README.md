@@ -2,12 +2,12 @@
 
 A template monorepo for a stack with
 
--   [Nx](https://nx.dev)
--   [Supabase](https://supabase.com/)
--   [Payload CMS](https://payloadcms.com/)
--   [Next.js](https://nextjs.org/)
--   [shadcn/ui](https://ui.shadcn.com/)
--   [Storybook](https://storybook.js.org/)
+- [Nx](https://nx.dev)
+- [Supabase](https://supabase.com/)
+- [Payload CMS](https://payloadcms.com/)
+- [Next.js](https://nextjs.org/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Storybook](https://storybook.js.org/)
 
 ## Local development
 
@@ -59,39 +59,39 @@ Ensure you have Node.js v20.9 or newer installed and [Corepack enabled](https://
 
 #### Why use convenience scripts over simple equivalents?
 
--   Tasks are run through Nx which enables
+- Tasks are run through Nx which enables
 
-    -   parallelization
-    -   advanced caching
-    -   only running the tasks on affected code
+    - parallelization
+    - advanced caching
+    - only running the tasks on affected code
 
     which makes running the scripts much faster
 
--   The "combo" / "chained" scripts (`lp`, `tlp`, `ff`, `tff`) forward arguments to each subtask
+- The "combo" / "chained" scripts (`lp`, `tlp`, `ff`, `tff`) forward arguments to each subtask
 
-    -   see `scripts/{typecheck-,}{lint-and-prettier,fix-and-format}.bash`
+    - see `scripts/{typecheck-,}{lint-and-prettier,fix-and-format}.bash`
 
 #### Examples
 
--   Type-check, fix and format projects affected by uncommitted and untracked changes
+- Type-check, fix and format projects affected by uncommitted and untracked changes
 
     ```
     pnpm tff
     ```
 
--   Type-check, fix and format all projects
+- Type-check, fix and format all projects
 
     ```
     pnpm tff --all
     ```
 
--   Lint and check formatting for projects affected by committed, uncommitted and untracked changes compared to `origin/main`
+- Lint and check formatting for projects affected by committed, uncommitted and untracked changes compared to `origin/main`
 
     ```
     pnpm lp --base=origin/main
     ```
 
--   Type-check projects affected by committed changes when comparing `origin/main` to `HEAD`
+- Type-check projects affected by committed changes when comparing `origin/main` to `HEAD`
 
     ```
     pnpm typecheck --base=origin/main --head=HEAD

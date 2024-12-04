@@ -18,7 +18,7 @@ const spawnAsync = async (...args: Parameters<typeof child_process.spawn>) =>
 
 const importMapPath = path.join(
     url.fileURLToPath(import.meta.url),
-    "../../src/app/(payload)/admin/importMap.js"
+    "../../src/app/(payload)/admin/importMap.js",
 );
 
 (async () => {
