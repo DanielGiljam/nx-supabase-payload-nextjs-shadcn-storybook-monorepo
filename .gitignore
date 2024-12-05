@@ -51,5 +51,8 @@ storybook-static
 # TypeScript
 tsconfig.tsbuildinfo
 
+# ESLint
+.eslintcache
+
 # .env files
 .env*.local
