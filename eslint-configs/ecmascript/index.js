@@ -35,7 +35,6 @@ export default [
             ],
             "func-style": ["warn", "expression"],
             "import/no-extraneous-dependencies": "error",
-            "import/no-relative-packages": "error",
             "import/order": [
                 "warn",
                 {
