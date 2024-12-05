@@ -64,6 +64,7 @@
         },
         "lint": {
             "options": {
+                "cache": true,
                 "max-warnings": 0,
                 "report-unused-disable-directives": true
             }
