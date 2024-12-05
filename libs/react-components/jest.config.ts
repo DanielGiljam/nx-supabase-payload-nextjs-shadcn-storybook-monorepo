@@ -1,6 +1,6 @@
 export default {
     displayName: "react-components",
-    preset: "../../jest.preset.js",
+    preset: "../../jest.preset.cjs",
     transform: {
         "^.+\\.[tj]sx?$": [
             "@swc/jest",
