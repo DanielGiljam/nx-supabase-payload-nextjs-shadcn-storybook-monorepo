@@ -2,5 +2,10 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-pnpm nx affected --targets=typecheck,lint # maximize parallelization opportunity
-pnpm prettier $*
+if [[ -n "$CONVENIENCE_SCRIPTS_ALL" ]]; then
+    pnpm nx run-many --targets=typecheck,lint # maximize parallelization opportunity
+    pnpm prettier:all $*
+else
+    pnpm nx affected --targets=typecheck,lint # maximize parallelization opportunity
+    pnpm prettier $*
+fi

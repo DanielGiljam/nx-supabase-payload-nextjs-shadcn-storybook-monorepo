@@ -82,7 +82,7 @@ Ensure you have Node.js v20.9 or newer installed and [Corepack enabled](https://
 - Type-check, fix and format all projects
 
     ```
-    pnpm tff --all
+    pnpm tff:all
     ```
 
 - Lint and check formatting for projects affected by committed, uncommitted and untracked changes compared to `origin/main`

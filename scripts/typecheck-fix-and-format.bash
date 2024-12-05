@@ -2,6 +2,12 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-pnpm typecheck $*
-pnpm fix $*
-pnpm format $*
+if [[ -n "$CONVENIENCE_SCRIPTS_ALL" ]]; then
+    pnpm typecheck:all $*
+    pnpm fix:all $*
+    pnpm format:all $*
+else
+    pnpm typecheck $*
+    pnpm fix $*
+    pnpm format $*
+fi

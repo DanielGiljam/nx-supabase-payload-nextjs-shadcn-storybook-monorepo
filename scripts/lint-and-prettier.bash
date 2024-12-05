@@ -2,5 +2,10 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-pnpm lint $*
-pnpm prettier $*
+if [[ -n "$CONVENIENCE_SCRIPTS_ALL" ]]; then
+    pnpm lint:all $*
+    pnpm prettier:all $*
+else
+    pnpm lint $*
+    pnpm prettier $*
+fi

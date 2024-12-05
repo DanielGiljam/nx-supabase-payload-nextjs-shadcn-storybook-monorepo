@@ -2,5 +2,10 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-pnpm fix $*
-pnpm format $*
+if [[ -n "$CONVENIENCE_SCRIPTS_ALL" ]]; then
+    pnpm fix:all $*
+    pnpm format:all $*
+else
+    pnpm fix $*
+    pnpm format $*
+fi

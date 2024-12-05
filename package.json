@@ -6,14 +6,23 @@
     "type": "module",
     "scripts": {
         "typecheck": "nx affected --target=typecheck",
+        "typecheck:all": "nx run-many --target=typecheck",
         "lint": "nx affected --target=lint",
+        "lint:all": "nx run-many --target=lint",
         "fix": "nx affected --target=lint --fix",
+        "fix:all": "nx run-many --target=lint --fix",
         "prettier": "nx format:check",
+        "prettier:all": "nx format:check --all",
         "format": "nx format:write",
+        "format:all": "nx format:write --all",
         "lp": "./scripts/lint-and-prettier.bash",
+        "lp:all": "cross-env CONVENIENCE_SCRIPTS_ALL=1 ./scripts/lint-and-prettier.bash",
         "tlp": "./scripts/typecheck-lint-and-prettier.bash",
+        "tlp:all": "cross-env CONVENIENCE_SCRIPTS_ALL=1 ./scripts/typecheck-lint-and-prettier.bash",
         "ff": "./scripts/fix-and-format.bash",
-        "tff": "./scripts/typecheck-fix-and-format.bash"
+        "ff:all": "cross-env CONVENIENCE_SCRIPTS_ALL=1 ./scripts/fix-and-format.bash",
+        "tff": "./scripts/typecheck-fix-and-format.bash",
+        "tff:all": "cross-env CONVENIENCE_SCRIPTS_ALL=1 ./scripts/typecheck-fix-and-format.bash"
     },
     "dependencies": {
         "@my-project/payload": "workspace:*",
