@@ -1,9 +1,20 @@
 module.exports = {
-    extends: ["standard-react", "prettier"],
+    extends: ["standard-jsx", "standard-react", "prettier"],
     rules: {
+        quotes: [
+            "warn",
+            "double",
+            {
+                avoidEscape: true,
+                allowTemplateLiterals: false,
+            },
+        ],
         "react/jsx-curly-brace-presence": [
             "warn",
-            {props: "always", children: "never"},
+            {
+                props: "always",
+                children: "never",
+            },
         ],
         "react/jsx-sort-props": [
             "warn",
