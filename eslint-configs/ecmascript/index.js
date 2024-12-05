@@ -1,3 +1,5 @@
+import path from "node:path";
+
 import love from "eslint-config-love";
 import prettier from "eslint-config-prettier";
 
@@ -34,7 +36,16 @@ export default [
                 },
             ],
             "func-style": ["warn", "expression"],
-            "import/no-extraneous-dependencies": "error",
+            "import/no-extraneous-dependencies": [
+                "error",
+                {
+                    packageDir: path.resolve(
+                        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument -- it's been verified to work
+                        import.meta.dirname,
+                        "../../",
+                    ),
+                },
+            ],
             "import/order": [
                 "warn",
                 {
