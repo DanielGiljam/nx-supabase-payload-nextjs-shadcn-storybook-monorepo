@@ -46,6 +46,14 @@ export default [
                 },
             ],
             "no-unused-vars": "off",
+            quotes: [
+                "warn",
+                "double",
+                {
+                    avoidEscape: true,
+                    allowTemplateLiterals: false,
+                },
+            ],
             "sort-imports": [
                 "warn",
                 {
