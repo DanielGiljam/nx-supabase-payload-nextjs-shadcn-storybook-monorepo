@@ -3,8 +3,6 @@ import path from "node:path";
 import love from "eslint-config-love";
 import prettier from "eslint-config-prettier";
 
-const {import: _import, ...lovePlugins} = love.plugins;
-
 export default [
     {
         name: "love",
