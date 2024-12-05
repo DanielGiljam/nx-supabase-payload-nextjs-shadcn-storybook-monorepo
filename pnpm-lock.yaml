@@ -181,6 +181,9 @@ importers:
       eslint-config-prettier:
         specifier: ^9.0.0
         version: 9.1.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-config-standard-jsx:
+        specifier: ^11.0.0
+        version: 11.0.0(eslint-plugin-react@7.35.0(eslint@9.15.0(jiti@1.21.6)))(eslint@9.15.0(jiti@1.21.6))
       eslint-config-standard-react:
         specifier: ^13.0.0
         version: 13.0.0(eslint-plugin-react-hooks@5.0.0(eslint@9.15.0(jiti@1.21.6)))(eslint-plugin-react@7.35.0(eslint@9.15.0(jiti@1.21.6)))(eslint@9.15.0(jiti@1.21.6))
@@ -5457,6 +5460,12 @@ packages:
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
+
+  eslint-config-standard-jsx@11.0.0:
+    resolution: {integrity: sha512-+1EV/R0JxEK1L0NGolAr8Iktm3Rgotx3BKwgaX+eAuSX8D952LULKtjgZD3F+e6SvibONnhLwoTi9DPxN5LvvQ==}
+    peerDependencies:
+      eslint: ^8.8.0
+      eslint-plugin-react: ^7.28.0
 
   eslint-config-standard-react@13.0.0:
     resolution: {integrity: sha512-HrVPGj8UncHfV+BsdJTuJpVsomn6AIrke3Af2Fh4XFvQQDU+iO6N2ZL+UsC+scExft4fU3uf7fJwj7PKWnXJDA==}
@@ -16677,6 +16686,11 @@ snapshots:
   eslint-config-prettier@9.1.0(eslint@9.15.0(jiti@1.21.6)):
     dependencies:
       eslint: 9.15.0(jiti@1.21.6)
+
+  eslint-config-standard-jsx@11.0.0(eslint-plugin-react@7.35.0(eslint@9.15.0(jiti@1.21.6)))(eslint@9.15.0(jiti@1.21.6)):
+    dependencies:
+      eslint: 9.15.0(jiti@1.21.6)
+      eslint-plugin-react: 7.35.0(eslint@9.15.0(jiti@1.21.6))
 
   eslint-config-standard-react@13.0.0(eslint-plugin-react-hooks@5.0.0(eslint@9.15.0(jiti@1.21.6)))(eslint-plugin-react@7.35.0(eslint@9.15.0(jiti@1.21.6)))(eslint@9.15.0(jiti@1.21.6)):
     dependencies:
