@@ -1,5 +1,6 @@
 {
     "name": "@my-project/eslint-config-ecmascript",
     "version": "0.0.0",
-    "private": true
+    "private": true,
+    "type": "module"
 }

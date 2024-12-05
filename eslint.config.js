@@ -1,6 +1,7 @@
-const nx = require("@nx/eslint-plugin");
+import ecmascript from "@my-project/eslint-config-ecmascript";
+import nx from "@nx/eslint-plugin";
 
-module.exports = [
+export default [
     ...nx.configs["flat/base"],
     ...nx.configs["flat/typescript"],
     ...nx.configs["flat/javascript"],
@@ -25,6 +26,10 @@ module.exports = [
             ],
         },
     },
+    ...ecmascript.map((config) => ({
+        files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+        ...config,
+    })),
     {
         files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
         // Override or add rules here

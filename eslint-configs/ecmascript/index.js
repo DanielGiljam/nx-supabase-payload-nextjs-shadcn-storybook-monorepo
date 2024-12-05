@@ -1,6 +1,17 @@
-module.exports = (async () => [
-    (await import("eslint-config-love")).default,
-    require("eslint-config-prettier"),
+import love from "eslint-config-love";
+import prettier from "eslint-config-prettier";
+
+const {import: _import, ...lovePlugins} = love.plugins;
+
+export default [
+    {
+        name: "love",
+        ...love,
+    },
+    {
+        name: "prettier",
+        ...prettier,
+    },
     {
         rules: {
             "@typescript-eslint/explicit-function-return-type": "off",
@@ -18,7 +29,9 @@ module.exports = (async () => [
             "func-name-matching": [
                 "warn",
                 "always",
-                {considerPropertyDescriptor: true},
+                {
+                    considerPropertyDescriptor: true,
+                },
             ],
             "func-style": ["warn", "expression"],
             "import/no-extraneous-dependencies": "error",
@@ -28,7 +41,9 @@ module.exports = (async () => [
                 {
                     pathGroupsExcludedImportTypes: ["unknown"],
                     "newlines-between": "always",
-                    alphabetize: {order: "asc"},
+                    alphabetize: {
+                        order: "asc",
+                    },
                 },
             ],
             "no-unused-vars": "off",
@@ -46,4 +61,4 @@ module.exports = (async () => [
             ],
         },
     },
-])();
+];
