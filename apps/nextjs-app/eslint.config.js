@@ -36,7 +36,7 @@ export default [
             overrides: [
                 {
                     files: ["**/*.tsx", "**/*.jsx"],
-                    extends: ["@my-project/react"],
+                    extends: ["@my-project/react", "plugin:react/jsx-runtime"],
                 },
             ],
         }),
