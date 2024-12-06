@@ -42,6 +42,11 @@ export default [
         }),
     ),
     {
-        ignores: [".next/**/*"],
+        ignores: [
+            ".next/**/*",
+            "src/app/(payload)/**/*",
+            "index.d.ts",
+            "next-env.d.ts",
+        ],
     },
 ];
