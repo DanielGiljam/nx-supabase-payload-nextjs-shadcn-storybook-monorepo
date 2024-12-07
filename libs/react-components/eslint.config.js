@@ -39,6 +39,20 @@ export default [
             return config;
         }),
     {
+        languageOptions: {
+            parserOptions: {
+                projectService: {
+                    allowDefaultProject: [
+                        "eslint.config.js",
+                        "postcss.config.cjs",
+                        "tailwind.config.cjs",
+                    ],
+                },
+                tsconfigRootDir: dirname,
+            },
+        },
+    },
+    {
         files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
         // Override or add rules here
         rules: {},

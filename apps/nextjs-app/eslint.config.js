@@ -55,4 +55,18 @@ export default [
             "next-env.d.ts",
         ],
     },
+    {
+        languageOptions: {
+            parserOptions: {
+                projectService: {
+                    allowDefaultProject: [
+                        "jest.config.ts",
+                        "postcss.config.cjs",
+                        "tailwind.config.cjs",
+                    ],
+                },
+                tsconfigRootDir: dirname,
+            },
+        },
+    },
 ];
