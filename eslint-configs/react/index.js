@@ -1,3 +1,6 @@
+/**
+ * @type {import("eslint").Linter.LegacyConfig}
+ */
 module.exports = {
     extends: ["standard-jsx", "standard-react", "prettier"],
     rules: {

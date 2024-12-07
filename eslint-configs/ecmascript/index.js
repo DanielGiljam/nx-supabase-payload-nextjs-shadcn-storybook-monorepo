@@ -7,6 +7,9 @@ import prettier from "eslint-config-prettier";
 const filename = url.fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
+/**
+ * @type {import("eslint").Linter.Config[]}
+ */
 export default [
     {
         name: "love",

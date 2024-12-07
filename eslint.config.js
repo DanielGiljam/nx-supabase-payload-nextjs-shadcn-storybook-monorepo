@@ -7,6 +7,9 @@ import nx from "@nx/eslint-plugin";
 const filename = url.fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
+/**
+ * @type {import("eslint").Linter.Config[]}
+ */
 export default [
     ...nx.configs["flat/base"],
     ...nx.configs["flat/typescript"],
