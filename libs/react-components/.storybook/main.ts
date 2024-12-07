@@ -1,8 +1,7 @@
-import type {StorybookConfig} from "@storybook/react-vite";
-
 import {nxViteTsPaths} from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
-import {mergeConfig} from "vite";
+import type {StorybookConfig} from "@storybook/react-vite";
 import react from "@vitejs/plugin-react";
+import {mergeConfig} from "vite";
 
 const config: StorybookConfig = {
     stories: ["../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))"],
@@ -15,7 +14,7 @@ const config: StorybookConfig = {
         experimentalRSC: true,
     },
 
-    viteFinal: async (config) =>
+    viteFinal: (config) =>
         mergeConfig(config, {
             plugins: [react(), nxViteTsPaths()],
         }),

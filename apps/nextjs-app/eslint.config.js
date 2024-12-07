@@ -6,6 +6,7 @@ import {FlatCompat} from "@eslint/eslintrc";
 import js from "@eslint/js";
 import nx from "@nx/eslint-plugin";
 import eslintPluginImport from "eslint-plugin-import";
+
 import baseConfig from "../../eslint.config.js";
 
 const filename = url.fileURLToPath(import.meta.url);
@@ -20,7 +21,8 @@ export default [
     ...fixupConfigRules(compat.extends("next"))
         // temporary workaround for https://github.com/eslint/eslintrc/issues/135
         .map((config) => {
-            if (config.plugins?.import) {
+            if (config.plugins?.import != null) {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- eslint-plugin-import doesn't have type definitions so typescript-eslint complains about it
                 config.plugins.import = eslintPluginImport;
             }
             return config;
@@ -29,13 +31,15 @@ export default [
     ...fixupConfigRules(compat.extends("next/core-web-vitals"))
         // temporary workaround for https://github.com/eslint/eslintrc/issues/135
         .map((config) => {
-            if (config.plugins?.import) {
+            if (config.plugins?.import != null) {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- eslint-plugin-import doesn't have type definitions so typescript-eslint complains about it
                 config.plugins.import = eslintPluginImport;
             }
             return config;
         }),
 
     ...baseConfig,
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access -- @nx/eslint-plugin doesn't have type definitions so typescript-eslint complains about it
     ...nx.configs["flat/react-typescript"],
     ...fixupConfigRules(
         compat.config({

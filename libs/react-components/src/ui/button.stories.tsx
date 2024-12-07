@@ -1,7 +1,8 @@
-import type {Meta, StoryObj} from "@storybook/react";
-import {Button} from "./button";
-import {within} from "@storybook/testing-library";
 import {expect} from "@storybook/jest";
+import type {Meta, StoryObj} from "@storybook/react";
+import {within} from "@storybook/testing-library";
+
+import {Button} from "./button";
 
 const meta: Meta<typeof Button> = {
     component: Button,
@@ -16,6 +17,6 @@ export const Primary: Story = {
     },
     play: async ({canvasElement}) => {
         const canvas = within(canvasElement);
-        expect(canvas.getByText(/Primary/gi)).toBeTruthy();
+        await expect(canvas.getByText(/Primary/gi)).toBeTruthy();
     },
 };

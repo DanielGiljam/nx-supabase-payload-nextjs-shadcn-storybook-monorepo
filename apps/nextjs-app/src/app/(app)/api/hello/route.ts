@@ -1,3 +1,1 @@
-export async function GET(request: Request) {
-    return new Response("Hello, from API!");
-}
+export const GET = () => new Response("Hello, from API!");

@@ -1,10 +1,10 @@
-import {defineConfig, devices} from "@playwright/test";
-import {nxE2EPreset} from "@nx/playwright/preset";
-
 import {workspaceRoot} from "@nx/devkit";
+import {nxE2EPreset} from "@nx/playwright/preset";
+import {defineConfig, devices} from "@playwright/test";
 
 // For CI, you may want to set BASE_URL to the deployed application.
-const baseURL = process.env["BASE_URL"] || "http://localhost:3000";
+// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing, @typescript-eslint/strict-boolean-expressions -- "or" works better in this case where we also want to take the fallback in case BASE_URL is empty string
+const baseURL = process.env.BASE_URL || "http://localhost:3000";
 
 /**
  * Read environment variables from file.
@@ -27,6 +27,7 @@ export default defineConfig({
     webServer: {
         command: "pnpm exec nx run nextjs-app:start",
         url: "http://localhost:3000",
+        // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions -- un-strictness here is better
         reuseExistingServer: !process.env.CI,
         cwd: workspaceRoot,
     },

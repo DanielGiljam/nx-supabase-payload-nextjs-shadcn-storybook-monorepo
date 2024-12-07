@@ -1,4 +1,5 @@
 //@ts-check
+/* eslint-disable @typescript-eslint/no-require-imports, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call -- this file is special */
 
 const {composePlugins, withNx} = require("@nx/next");
 const {withPayload} = require("@payloadcms/next/withPayload");

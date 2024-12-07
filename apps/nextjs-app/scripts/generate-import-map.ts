@@ -1,13 +1,14 @@
+import child_process from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
-import child_process from "node:child_process";
 import url from "node:url";
 
-const spawnAsync = async (...args: Parameters<typeof child_process.spawn>) =>
+const spawnAsync = async (...args: Parameters<typeof child_process.spawn>) => {
     await new Promise<void>((resolve, reject) => {
         const cp = child_process.spawn(...args);
         cp.on("error", reject);
         cp.on("close", (code) => {
+            // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- success exit code
             if (code === 0) {
                 resolve();
             } else {
@@ -15,6 +16,7 @@ const spawnAsync = async (...args: Parameters<typeof child_process.spawn>) =>
             }
         });
     });
+};
 
 const importMapPath = path.join(
     url.fileURLToPath(import.meta.url),
@@ -28,7 +30,8 @@ const importMapPath = path.join(
         await fs.writeFile(importMapPath, "");
     }
     await spawnAsync("payload", ["generate:importmap"], {stdio: "inherit"});
-})().catch((error) => {
+})().catch((error: unknown) => {
     console.error(error);
+    // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- error exit code
     process.exit(1);
 });
