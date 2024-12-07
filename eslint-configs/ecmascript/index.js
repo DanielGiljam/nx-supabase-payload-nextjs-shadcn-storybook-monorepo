@@ -35,6 +35,7 @@ export default [
                     caughtErrors: "all",
                 },
             ],
+            "@typescript-eslint/prefer-destructuring": "off",
             "func-names": ["warn", "always"],
             "func-name-matching": [
                 "warn",
