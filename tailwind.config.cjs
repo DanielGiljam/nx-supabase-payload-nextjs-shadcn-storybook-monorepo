@@ -2,6 +2,7 @@
 module.exports = {
     darkMode: ["class"],
     content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+    safelist: ["dark"],
     theme: {
         extend: {
             colors: {
