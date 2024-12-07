@@ -28,5 +28,6 @@ module.exports = {
                 reservedFirst: true,
             },
         ],
+        "react/prop-types": "off",
     },
 };
