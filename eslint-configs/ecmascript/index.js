@@ -82,6 +82,18 @@ export default [
                     ],
                 },
             ],
+            "unicorn/no-null": "off",
+            "unicorn/no-keyword-prefix": "off",
+            "unicorn/prevent-abbreviations": [
+                "error",
+                {
+                    replacements: {
+                        args: false,
+                        props: false,
+                        ref: false,
+                    },
+                },
+            ],
         },
     },
 ];
