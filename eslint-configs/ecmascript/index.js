@@ -25,6 +25,7 @@ export default [
         rules: {
             "@typescript-eslint/explicit-function-return-type": "off",
             "@typescript-eslint/no-non-null-assertion": "off",
+            "@typescript-eslint/no-require-imports": "off", // we have unicorn/prefer-module configured instead
             "@typescript-eslint/no-unused-vars": [
                 "error",
                 {
