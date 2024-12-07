@@ -3,6 +3,7 @@ import url from "node:url";
 
 import love from "eslint-config-love";
 import prettier from "eslint-config-prettier";
+import unicorn from "eslint-plugin-unicorn";
 
 const filename = url.fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -15,6 +16,7 @@ export default [
         name: "love",
         ...love,
     },
+    unicorn.configs["flat/all"],
     {
         name: "prettier",
         ...prettier,
