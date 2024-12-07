@@ -238,6 +238,9 @@ importers:
       storybook:
         specifier: ^8.2.8
         version: 8.4.5(prettier@3.4.2)
+      storybook-dark-mode:
+        specifier: ^4.0.2
+        version: 4.0.2(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(storybook@8.4.5(prettier@3.4.2))
       supabase:
         specifier: ^1.223.10
         version: 1.223.10
@@ -3267,6 +3270,11 @@ packages:
   '@storybook/core-events@7.6.20':
     resolution: {integrity: sha512-tlVDuVbDiNkvPDFAu+0ou3xBBYbx9zUURQz4G9fAq0ScgBOs/bpzcRrFb4mLpemUViBAd47tfZKdH4MAX45KVQ==}
 
+  '@storybook/core-events@8.4.7':
+    resolution: {integrity: sha512-D5WhJBVfywIVBurNZ7mwSjXT18a8Ct5AfZFEukIBPLaezY21TgN/7sE2OU5dkMQsm11oAZzsdLPOzms2e9HsRg==}
+    peerDependencies:
+      storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
+
   '@storybook/core-server@8.4.5':
     resolution: {integrity: sha512-Tse9LmXBdifJgc31oIQs+fUHClLt4FuoBMM2OuktD++BDMoSzNRBtcwGW9Zw8s3HApnSs2MgH2LTfqjpz3Jh4g==}
     peerDependencies:
@@ -3376,6 +3384,11 @@ packages:
 
   '@storybook/theming@8.4.5':
     resolution: {integrity: sha512-45e/jeG4iuqdZcHg3PbB6dwXQTwlnnEB7r/QcVExyC7ibrkTnjUfvxzyUw4mmU3CXETFGD5EcUobFkgK+/aPxQ==}
+    peerDependencies:
+      storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
+
+  '@storybook/theming@8.4.7':
+    resolution: {integrity: sha512-99rgLEjf7iwfSEmdqlHkSG3AyLcK0sfExcr0jnc6rLiAkBhzuIsvcHjjUwkR210SOCgXqBPW0ZA6uhnuyppHLw==}
     peerDependencies:
       storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
 
@@ -8962,6 +8975,9 @@ packages:
     resolution: {integrity: sha512-iCGQj+0l0HOdZ2AEeBADlsRC+vsnDsZsbdSiH1yNSjcfKM7fdpCMfqAL/dwF5BLiw/XhRft/Wax6zQbhq2BcjQ==}
     engines: {node: '>= 0.4'}
 
+  storybook-dark-mode@4.0.2:
+    resolution: {integrity: sha512-zjcwwQ01R5t1VsakA6alc2JDIRVtavryW8J3E3eKLDIlAMcvsgtpxlelWkZs2cuNspk6Z10XzhQVrUWtYc3F0w==}
+
   storybook@8.4.5:
     resolution: {integrity: sha512-9tfgabXnMibYp3SvoaJXXMD63Pw0SA9Hnf5v6TxysCYZs4DZ/04fAkK+9RW+K4C5JkV83qXMMlrsPj766R47fg==}
     hasBin: true
@@ -14138,6 +14154,10 @@ snapshots:
     dependencies:
       ts-dedent: 2.2.0
 
+  '@storybook/core-events@8.4.7(storybook@8.4.5(prettier@3.4.2))':
+    dependencies:
+      storybook: 8.4.5(prettier@3.4.2)
+
   '@storybook/core-server@8.4.5(storybook@8.4.5(prettier@3.4.2))':
     dependencies:
       storybook: 8.4.5(prettier@3.4.2)
@@ -14195,6 +14215,11 @@ snapshots:
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+
+  '@storybook/icons@1.2.12(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)':
+    dependencies:
+      react: 19.0.0-rc-65a56d0e-20241020
+      react-dom: 19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020)
 
   '@storybook/instrumenter@8.4.5(storybook@8.4.5(prettier@3.4.2))':
     dependencies:
@@ -14341,6 +14366,10 @@ snapshots:
       ts-dedent: 2.2.0
 
   '@storybook/theming@8.4.5(storybook@8.4.5(prettier@3.4.2))':
+    dependencies:
+      storybook: 8.4.5(prettier@3.4.2)
+
+  '@storybook/theming@8.4.7(storybook@8.4.5(prettier@3.4.2))':
     dependencies:
       storybook: 8.4.5(prettier@3.4.2)
 
@@ -20939,6 +20968,21 @@ snapshots:
   stop-iteration-iterator@1.0.0:
     dependencies:
       internal-slot: 1.0.7
+
+  storybook-dark-mode@4.0.2(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(storybook@8.4.5(prettier@3.4.2)):
+    dependencies:
+      '@storybook/components': 8.4.5(storybook@8.4.5(prettier@3.4.2))
+      '@storybook/core-events': 8.4.7(storybook@8.4.5(prettier@3.4.2))
+      '@storybook/global': 5.0.0
+      '@storybook/icons': 1.2.12(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)
+      '@storybook/manager-api': 8.4.5(storybook@8.4.5(prettier@3.4.2))
+      '@storybook/theming': 8.4.7(storybook@8.4.5(prettier@3.4.2))
+      fast-deep-equal: 3.1.3
+      memoizerific: 1.11.3
+    transitivePeerDependencies:
+      - react
+      - react-dom
+      - storybook
 
   storybook@8.4.5(prettier@3.4.2):
     dependencies:
