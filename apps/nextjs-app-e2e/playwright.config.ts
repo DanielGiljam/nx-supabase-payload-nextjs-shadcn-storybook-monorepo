@@ -1,6 +1,10 @@
+import url from "node:url";
+
 import {workspaceRoot} from "@nx/devkit";
 import {nxE2EPreset} from "@nx/playwright/preset";
 import {defineConfig, devices} from "@playwright/test";
+
+const filename = url.fileURLToPath(import.meta.url);
 
 // For CI, you may want to set BASE_URL to the deployed application.
 // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing, @typescript-eslint/strict-boolean-expressions -- "or" works better in this case where we also want to take the fallback in case BASE_URL is empty string
@@ -16,7 +20,7 @@ const baseURL = process.env.BASE_URL || "http://localhost:3000";
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-    ...nxE2EPreset(__filename, {testDir: "./src"}),
+    ...nxE2EPreset(filename, {testDir: "./src"}),
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
     use: {
         baseURL,
