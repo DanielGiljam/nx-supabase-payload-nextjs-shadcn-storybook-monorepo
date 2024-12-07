@@ -17,6 +17,6 @@ export const Primary: Story = {
     },
     play: async ({canvasElement}) => {
         const canvas = within(canvasElement);
-        await expect(canvas.getByText(/Primary/gi)).toBeTruthy();
+        await expect(canvas.getByText(/Primary/)).toBeTruthy();
     },
 };

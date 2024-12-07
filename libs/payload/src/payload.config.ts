@@ -6,8 +6,8 @@ import {s3Storage} from "@payloadcms/storage-s3";
 import {buildConfig} from "payload";
 import sharp from "sharp";
 
-import {Media} from "./collections/Media";
-import {Users} from "./collections/Users";
+import {Media} from "./collections/media";
+import {Users} from "./collections/users";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);

@@ -1,3 +1,5 @@
+#!/usr/bin/env -S pnpm tsx
+
 import child_process from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -30,8 +32,10 @@ const importMapPath = path.join(
         await fs.writeFile(importMapPath, "");
     }
     await spawnAsync("payload", ["generate:importmap"], {stdio: "inherit"});
-})().catch((error: unknown) => {
-    console.error(error);
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- error exit code
-    process.exit(1);
-});
+})()
+    // eslint-disable-next-line unicorn/prefer-top-level-await -- top-level await not available in this context
+    .catch((error: unknown) => {
+        console.error(error);
+        // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- error exit code
+        process.exit(1);
+    });
