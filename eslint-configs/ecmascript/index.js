@@ -41,6 +41,7 @@ export default [
                 },
             ],
             "func-style": ["warn", "expression"],
+            "import/no-anonymous-default-export": "off",
             "import/no-extraneous-dependencies": [
                 "error",
                 {
