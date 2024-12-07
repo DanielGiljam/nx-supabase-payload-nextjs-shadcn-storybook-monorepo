@@ -3,7 +3,8 @@
     "compilerOptions": {
         "allowJs": true,
         "outDir": "../../dist/out-tsc",
-        "sourceMap": false
+        "sourceMap": false,
+        "esModuleInterop": true
     },
     "include": [
         "**/*.ts",
