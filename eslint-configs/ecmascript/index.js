@@ -1,7 +1,11 @@
 import path from "node:path";
+import url from "node:url";
 
 import love from "eslint-config-love";
 import prettier from "eslint-config-prettier";
+
+const filename = url.fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 
 export default [
     {
@@ -37,11 +41,7 @@ export default [
             "import/no-extraneous-dependencies": [
                 "error",
                 {
-                    packageDir: path.resolve(
-                        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument -- it's been verified to work
-                        import.meta.dirname,
-                        "../../",
-                    ),
+                    packageDir: path.resolve(dirname, "../../"),
                 },
             ],
             "import/order": [

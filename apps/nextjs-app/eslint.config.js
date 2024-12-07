@@ -1,3 +1,6 @@
+import path from "node:path";
+import url from "node:url";
+
 import {fixupConfigRules} from "@eslint/compat";
 import {FlatCompat} from "@eslint/eslintrc";
 import js from "@eslint/js";
@@ -5,8 +8,11 @@ import nx from "@nx/eslint-plugin";
 import eslintPluginImport from "eslint-plugin-import";
 import baseConfig from "../../eslint.config.js";
 
+const filename = url.fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
+
 const compat = new FlatCompat({
-    baseDirectory: import.meta.dirname,
+    baseDirectory: dirname,
     recommendedConfig: js.configs.recommended,
 });
 
