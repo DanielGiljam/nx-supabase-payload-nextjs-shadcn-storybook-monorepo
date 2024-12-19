@@ -4,7 +4,7 @@ import {getPayload} from "payload";
 
 import {seed} from "./_/seed";
 
-export const maxDuration = 180; // This function can run for a maximum of 3 minutes
+export const maxDuration = 60; // This function can run for a maximum of 60 seconds
 
 export const POST = async (): Promise<Response> => {
     const payload = await getPayload({config});
