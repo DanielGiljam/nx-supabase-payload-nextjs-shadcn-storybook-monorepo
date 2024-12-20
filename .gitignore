@@ -47,6 +47,7 @@ out
 
 # Storybook
 storybook-static
+build-storybook.log
 
 # TypeScript
 tsconfig.tsbuildinfo
