@@ -1,0 +1,5 @@
+{
+    "$schema": "https://www.chromatic.com/config-file.schema.json",
+    "buildCommand": "pnpm nx build-storybook react-components",
+    "outputDir": "libs/react-components/storybook-static"
+}
