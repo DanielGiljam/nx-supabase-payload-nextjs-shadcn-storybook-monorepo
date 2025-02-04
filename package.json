@@ -103,6 +103,7 @@
         "@playwright/test": "^1.36.0",
         "@storybook/addon-essentials": "^8.2.8",
         "@storybook/addon-interactions": "^8.2.8",
+        "@storybook/blocks": "^8.5.3",
         "@storybook/core-server": "^8.2.8",
         "@storybook/experimental-nextjs-vite": "^8.4.7",
         "@storybook/jest": "^0.2.3",

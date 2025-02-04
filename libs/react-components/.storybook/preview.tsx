@@ -1,3 +1,7 @@
+import {
+    // eslint-disable-next-line unicorn/prevent-abbreviations
+    DocsContainer as DocsContainer_,
+} from "@storybook/blocks";
 import type {Decorator, Parameters} from "@storybook/react";
 import localFont from "next/font/local";
 import React from "react";
@@ -37,10 +41,28 @@ export const decorators: Decorator[] = [
     },
 ];
 
+// eslint-disable-next-line unicorn/prevent-abbreviations
+const DocsContainer: typeof DocsContainer_ = (props) => {
+    React.useEffect(() => {
+        const root = globalThis.document.documentElement;
+        root.dataset.theme = "light";
+        return () => {
+            delete root.dataset.theme;
+        };
+    }, []);
+    return (
+        // eslint-disable-next-line react/jsx-pascal-case
+        <DocsContainer_ {...props} />
+    );
+};
+
 export const parameters: Parameters = {
     darkMode: {
         classTarget: "html",
         stylePreview: true,
+    },
+    docs: {
+        container: DocsContainer,
     },
 };
 
