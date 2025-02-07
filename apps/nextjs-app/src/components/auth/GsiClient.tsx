@@ -3,6 +3,7 @@
 import {usePathname, useRouter} from "next/navigation";
 import Script from "next/script";
 import React from "react";
+import {useTranslation} from "react-i18next";
 import {ReplaySubject, combineLatestWith} from "rxjs";
 
 import {createClient} from "~/supabase/client";
@@ -199,9 +200,12 @@ const GoogleOneTap = () => {
 };
 
 export const GsiClient = () => {
+    const {i18n} = useTranslation();
     const router = useRouter();
     const routerRef = React.useRef(router);
     routerRef.current = router;
+    const locale =
+        i18n.resolvedLanguage ?? (i18n.options.fallbackLng as string);
     React.useEffect(() => {
         initializeGsiClient(routerRef).catch((error) => {
             console.error(error);
@@ -211,7 +215,7 @@ export const GsiClient = () => {
             .subscribe(([google, [parent, options]]) => {
                 google.accounts.id.renderButton(parent, {
                     ...options,
-                    locale: "en",
+                    locale,
                     // TODO: react to parent width changes
                     width: Math.floor(
                         parent.getBoundingClientRect().width,
@@ -221,10 +225,10 @@ export const GsiClient = () => {
         return () => {
             renderButton.unsubscribe();
         };
-    }, []);
+    }, [locale]);
     return (
         <>
-            <Script src={"https://accounts.google.com/gsi/client?hl=en"} />
+            <Script src={"https://accounts.google.com/gsi/client"} />
             <GoogleOneTap />
         </>
     );
