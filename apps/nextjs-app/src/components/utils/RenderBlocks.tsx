@@ -16,12 +16,11 @@ const blockComponents = {
 };
 
 export const RenderBlocks: React.FC<{
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
     blocks: Array<Page["layout"][0]>;
 }> = (props) => {
     const {blocks} = props;
 
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-unnecessary-condition, @typescript-eslint/no-magic-numbers -- [bulk suppress]
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-unnecessary-condition -- [bulk suppress]
     const hasBlocks = blocks && Array.isArray(blocks) && blocks.length > 0;
 
     if (hasBlocks) {

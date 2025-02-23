@@ -18,7 +18,6 @@ const getDocument = async (collection: Collection, slug: string, depth = 0) => {
         },
     });
 
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
     return page.docs[0];
 };
 

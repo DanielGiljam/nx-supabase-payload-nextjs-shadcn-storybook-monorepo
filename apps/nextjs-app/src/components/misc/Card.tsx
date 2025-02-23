@@ -34,7 +34,7 @@ export const Card: React.FC<{
     const {description, image: metaImage} = meta || {};
 
     const hasCategories =
-        // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-magic-numbers -- [bulk suppress]
+        // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions -- [bulk suppress]
         categories && Array.isArray(categories) && categories.length > 0;
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/prefer-nullish-coalescing -- [bulk suppress]
     const titleToUse = titleFromProps || title;

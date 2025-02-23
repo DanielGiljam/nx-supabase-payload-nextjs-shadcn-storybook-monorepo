@@ -74,7 +74,6 @@ export default async function Page({
                 </div>
             </div>
 
-            {/* eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress] */}
             {posts.totalDocs > 0 ? (
                 <CollectionArchive posts={posts.docs as CardPostData[]} />
             ) : (

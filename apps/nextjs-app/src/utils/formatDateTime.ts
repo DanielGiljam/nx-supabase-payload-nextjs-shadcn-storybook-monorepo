@@ -9,9 +9,7 @@ export const formatDateTime = (timestamp: string): string => {
     // const minutes = date.getMinutes();
     // const seconds = date.getSeconds();
 
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
     const MM = months + 1 < 10 ? `0${months + 1}` : months + 1;
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
     const DD = days < 10 ? `0${days}` : days;
     const YYYY = date.getFullYear();
     // const AMPM = hours < 12 ? 'AM' : 'PM';

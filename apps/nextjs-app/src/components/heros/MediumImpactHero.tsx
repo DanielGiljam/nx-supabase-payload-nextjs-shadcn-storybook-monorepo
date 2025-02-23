@@ -21,7 +21,6 @@ export const MediumImpactHero: React.FC<Page["hero"]> = ({
                 />
             )}
 
-            {/* eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress] */}
             {Array.isArray(links) && links.length > 0 && (
                 <ul className={"flex gap-4"}>
                     {links.map(({link}, index) => (

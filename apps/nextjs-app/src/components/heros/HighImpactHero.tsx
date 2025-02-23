@@ -39,7 +39,6 @@ export const HighImpactHero: React.FC<Page["hero"]> = ({
                             enableGutter={false}
                         />
                     )}
-                    {/* eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress] */}
                     {Array.isArray(links) && links.length > 0 && (
                         <ul className={"flex justify-center gap-4"}>
                             {links.map(({link}, index) => (

@@ -60,7 +60,6 @@ export const translation = async <
     return {
         t: i18nextInstance.getFixedT(
             lng,
-            // eslint-disable-next-line @typescript-eslint/no-magic-numbers
             Array.isArray(ns) ? ns[0] : ns,
             options.keyPrefix,
         ),

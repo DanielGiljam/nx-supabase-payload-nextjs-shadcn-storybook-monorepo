@@ -60,7 +60,7 @@ export default async function Post({params: parametersPromise}: Args) {
                         content={post.content}
                         enableGutter={false}
                     />
-                    {/* eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-magic-numbers -- [bulk suppress] */}
+                    {/* eslint-disable-next-line @typescript-eslint/strict-boolean-expressions -- [bulk suppress] */}
                     {post.relatedPosts && post.relatedPosts.length > 0 && (
                         <RelatedPosts
                             className={
@@ -104,6 +104,6 @@ const queryPostBySlug = React.cache(async ({slug}: {slug: string}) => {
         },
     });
 
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-magic-numbers -- [bulk suppress]
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, @typescript-eslint/strict-boolean-expressions -- [bulk suppress]
     return result.docs?.[0] || null;
 });

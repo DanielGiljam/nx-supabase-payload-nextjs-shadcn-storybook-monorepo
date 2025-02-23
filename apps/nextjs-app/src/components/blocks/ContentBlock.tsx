@@ -23,7 +23,6 @@ export const ContentBlock: React.FC<ContentBlockProps> = (props) => {
             >
                 {/* eslint-disable-next-line @typescript-eslint/strict-boolean-expressions -- [bulk suppress] */}
                 {columns &&
-                    // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
                     columns.length > 0 &&
                     columns.map((col, index) => {
                         const {enableLink, link, richText, size} = col;

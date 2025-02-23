@@ -10,7 +10,6 @@ const spawnAsync = async (...args: Parameters<typeof child_process.spawn>) => {
         const cp = child_process.spawn(...args);
         cp.on("error", reject);
         cp.on("close", (code) => {
-            // eslint-disable-next-line @typescript-eslint/no-magic-numbers
             if (code === 0) {
                 resolve();
             } else {
@@ -36,6 +35,5 @@ const importMapPath = path.join(
     // eslint-disable-next-line unicorn/prefer-top-level-await -- top-level await not available in this context
     .catch((error: unknown) => {
         console.error(error);
-        // eslint-disable-next-line @typescript-eslint/no-magic-numbers
         process.exit(1);
     });

@@ -45,10 +45,10 @@ export const AdminBar: React.FC<{
     const segments = useSelectedLayoutSegments();
     const [show, setShow] = React.useState(false);
     const collection =
-        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, @typescript-eslint/no-magic-numbers -- [bulk suppress]
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- [bulk suppress]
         collectionLabels[segments?.[1]] == null
             ? "pages"
-            : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, @typescript-eslint/no-magic-numbers -- [bulk suppress]
+            : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- [bulk suppress]
               segments?.[1];
     const router = useRouter();
 

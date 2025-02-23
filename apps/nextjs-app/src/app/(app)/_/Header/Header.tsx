@@ -5,7 +5,6 @@ import {HeaderClient} from "./Header.client";
 import {getCachedGlobal} from "~/utils/getGlobals";
 
 export const Header = async () => {
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
     const header: HeaderType = await getCachedGlobal("header", 1)();
 
     return <HeaderClient header={header} />;

@@ -13,7 +13,6 @@ export const CopyButton = ({code}: {code: string}) => {
             setCopied(true);
             setTimeout(() => {
                 setCopied(false);
-                // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
             }, 1000);
         }
     };

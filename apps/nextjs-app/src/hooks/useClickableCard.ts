@@ -25,10 +25,8 @@ export const useClickableCard = <T extends HTMLElement>({
     const router = useRouter();
     const card = React.useRef<T>(null);
     const link = React.useRef<HTMLAnchorElement>(null);
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
     const timeDown = React.useRef<number>(0);
     const hasActiveParent = React.useRef<boolean>(false);
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
     const pressedButton = React.useRef<number>(0);
 
     const handleMouseDown = React.useCallback(
@@ -66,10 +64,8 @@ export const useClickableCard = <T extends HTMLElement>({
                 if (
                     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-unnecessary-condition -- [bulk suppress]
                     link.current?.href &&
-                    // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
                     difference <= 250 &&
                     !hasActiveParent.current &&
-                    // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
                     pressedButton.current === 0 &&
                     !event.ctrlKey
                 ) {

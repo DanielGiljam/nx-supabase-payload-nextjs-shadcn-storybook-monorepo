@@ -59,7 +59,6 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
         // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/prefer-nullish-coalescing -- [bulk suppress]
         sizeFromProps ||
         Object.entries(breakpoints)
-            // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
             .map(([, value]) => `(max-width: ${value}px) ${value * 2}w`)
             .join(", ");
 

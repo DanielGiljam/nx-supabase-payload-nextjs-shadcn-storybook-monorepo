@@ -23,7 +23,7 @@ export const ArchiveBlock: React.FC<
         selectedDocs,
     } = props;
 
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/prefer-nullish-coalescing, @typescript-eslint/no-magic-numbers -- [bulk suppress]
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/prefer-nullish-coalescing -- [bulk suppress]
     const limit = limitFromProps || 3;
 
     let posts: Post[] = [];
@@ -39,7 +39,7 @@ export const ArchiveBlock: React.FC<
             collection: "posts",
             depth: 1,
             limit,
-            // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-magic-numbers -- [bulk suppress]
+            // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions -- [bulk suppress]
             ...(flattenedCategories && flattenedCategories.length > 0
                 ? {
                       where: {

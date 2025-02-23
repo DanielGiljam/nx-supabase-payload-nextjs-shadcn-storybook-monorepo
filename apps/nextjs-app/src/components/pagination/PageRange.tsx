@@ -12,26 +12,23 @@ export const PageRange: React.FC<{
     const {t} = await translation();
     const {className, collection, currentPage, limit, totalDocs} = props;
 
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-magic-numbers, @typescript-eslint/prefer-nullish-coalescing -- [bulk suppress]
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/prefer-nullish-coalescing -- [bulk suppress]
     let indexStart = (currentPage ? currentPage - 1 : 1) * (limit || 1) + 1;
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-magic-numbers -- [bulk suppress]
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions -- [bulk suppress]
     if (totalDocs && indexStart > totalDocs) indexStart = 0;
 
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/prefer-nullish-coalescing, @typescript-eslint/no-magic-numbers -- [bulk suppress]
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/prefer-nullish-coalescing -- [bulk suppress]
     let indexEnd = (currentPage || 1) * (limit || 1);
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions -- [bulk suppress]
     if (totalDocs && indexEnd > totalDocs) indexEnd = totalDocs;
 
     return (
         <div className={[className, "font-semibold"].filter(Boolean).join(" ")}>
-            {/* eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress] */}
             {(totalDocs === undefined || totalDocs === 0) &&
                 t("pagination.pageRange.noResults")}
             {totalDocs !== undefined &&
-                // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
                 totalDocs > 0 &&
                 t("pagination.pageRange.showing", {
-                    // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
                     context: indexStart > 0 ? "range" : undefined,
                     collection,
                     indexStart,

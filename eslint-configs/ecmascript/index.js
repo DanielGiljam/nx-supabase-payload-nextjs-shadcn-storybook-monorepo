@@ -25,14 +25,7 @@ export default [
         rules: {
             "@typescript-eslint/explicit-function-return-type": "off",
             "@typescript-eslint/init-declarations": "off",
-            "@typescript-eslint/no-magic-numbers": [
-                "error",
-                {
-                    ignoreDefaultValues: true,
-                    ignoreClassFieldInitialValues: true,
-                    detectObjects: false,
-                },
-            ],
+            "@typescript-eslint/no-magic-numbers": "off",
             "@typescript-eslint/no-non-null-assertion": "off",
             "@typescript-eslint/no-require-imports": "off", // we have unicorn/prefer-module configured instead
             "@typescript-eslint/no-unsafe-type-assertion": "off",

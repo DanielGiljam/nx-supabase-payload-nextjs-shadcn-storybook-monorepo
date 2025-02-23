@@ -39,7 +39,6 @@ const CmsLinkCommandItem = (props: CmsLinkCommandItemProps) => {
             value={props.label}
             onSelect={() => {
                 props.runCommand(() => {
-                    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
                     if (Object.keys(newTabProps).length > 0) {
                         window.open(href, newTabProps.target, newTabProps.rel);
                     } else {

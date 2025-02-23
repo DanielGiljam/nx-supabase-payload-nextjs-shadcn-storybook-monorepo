@@ -49,7 +49,7 @@ export default async function Page() {
             <CollectionArchive posts={posts.docs} />
 
             <div className={"container"}>
-                {/* eslint-disable-next-line @typescript-eslint/no-magic-numbers, @typescript-eslint/strict-boolean-expressions -- [bulk suppress] */}
+                {/* eslint-disable-next-line @typescript-eslint/strict-boolean-expressions -- [bulk suppress] */}
                 {posts.totalPages > 1 && posts.page && (
                     <Pagination
                         page={posts.page}

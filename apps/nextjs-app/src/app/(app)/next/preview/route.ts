@@ -100,7 +100,6 @@ export const GET = async (
                 },
             });
 
-            // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
             if (documents.docs.length === 0) {
                 return new Response("Document not found", {status: 404});
             }

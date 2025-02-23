@@ -92,23 +92,16 @@ declare global {
         | undefined;
 }
 
-export const google$ = new ReplaySubject<NonNullable<typeof google>>(
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
-    1,
-);
+export const google$ = new ReplaySubject<NonNullable<typeof google>>(1);
 
 export const renderButtonArgs$ = new ReplaySubject<
     [HTMLElement, GsiButtonConfiguration]
->(
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
-    1,
-);
+>(1);
 
 /** Generate nonce to use for Google ID token sign-in */
 const generateNonce = async () => {
     // eslint-disable-next-line @typescript-eslint/no-deprecated
     const nonce = btoa(
-        // eslint-disable-next-line @typescript-eslint/no-magic-numbers
         String.fromCodePoint(...crypto.getRandomValues(new Uint8Array(32))),
     );
     const encoder = new TextEncoder();
@@ -116,7 +109,6 @@ const generateNonce = async () => {
     const hashBuffer = await crypto.subtle.digest("SHA-256", encodedNonce);
     const hashArray = [...new Uint8Array(hashBuffer)];
     const hashedNonce = hashArray
-        // eslint-disable-next-line @typescript-eslint/no-magic-numbers
         .map((b) => b.toString(16).padStart(2, "0"))
         .join("");
 

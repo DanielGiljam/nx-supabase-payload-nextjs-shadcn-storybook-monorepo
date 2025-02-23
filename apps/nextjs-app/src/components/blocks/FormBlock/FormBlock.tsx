@@ -76,7 +76,6 @@ export const FormBlock: React.FC<
                 // delay loading indicator by 1s
                 loadingTimerID = setTimeout(() => {
                     setIsLoading(true);
-                    // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
                 }, 1000);
 
                 try {
@@ -101,13 +100,12 @@ export const FormBlock: React.FC<
 
                     clearTimeout(loadingTimerID);
 
-                    // eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
                     if (request.status >= 400) {
                         setIsLoading(false);
 
                         setError({
                             message:
-                                // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-magic-numbers, @typescript-eslint/prefer-nullish-coalescing -- [bulk suppress]
+                                // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/prefer-nullish-coalescing -- [bulk suppress]
                                 response.errors?.[0]?.message ||
                                 "Internal Server Error",
                             status: response.status,

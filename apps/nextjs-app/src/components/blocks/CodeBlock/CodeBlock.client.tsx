@@ -31,7 +31,6 @@ export const CodeBlockClient: React.FC<Props> = ({code, language = ""}) => {
                                     "table-cell select-none text-right text-white/25"
                                 }
                             >
-                                {/* eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress] */}
                                 {index + 1}
                             </span>
                             <span className={"table-cell pl-4"}>

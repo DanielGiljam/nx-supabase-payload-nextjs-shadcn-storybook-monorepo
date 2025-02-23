@@ -71,7 +71,6 @@ const Provider = ({
         React.useRef<Record<string, number>>(initialRegionHeights);
     const createRegionRefCallback = React.useCallback(
         (regionName: string) => (section: HTMLElement | null) => {
-            // eslint-disable-next-line @typescript-eslint/no-magic-numbers
             const height = section?.getBoundingClientRect().height ?? 0;
             regionHeightsRef.current[regionName] = height;
             if (bodyRef.current != null) {

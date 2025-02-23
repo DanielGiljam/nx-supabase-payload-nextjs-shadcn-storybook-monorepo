@@ -36,19 +36,12 @@ export const IS_SEGMENTED = 2;
 
 // Text node formatting
 export const IS_BOLD = 1;
-// eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
 export const IS_ITALIC = 1 << 1;
-// eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
 export const IS_STRIKETHROUGH = 1 << 2;
-// eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
 export const IS_UNDERLINE = 1 << 3;
-// eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
 export const IS_CODE = 1 << 4;
-// eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
 export const IS_SUBSCRIPT = 1 << 5;
-// eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
 export const IS_SUPERSCRIPT = 1 << 6;
-// eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
 export const IS_HIGHLIGHT = 1 << 7;
 
 export const IS_ALL_FORMATTING =
@@ -63,7 +56,6 @@ export const IS_ALL_FORMATTING =
 
 // Text node details
 export const IS_DIRECTIONLESS = 1;
-// eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
 export const IS_UNMERGEABLE = 1 << 1;
 
 // Element node formatting
@@ -133,7 +125,6 @@ export const ELEMENT_FORMAT_TO_TYPE: Record<number, ElementFormatType> = {
     [IS_ALIGN_START]: "start",
 };
 
-// eslint-disable-next-line @typescript-eslint/no-magic-numbers -- [bulk suppress]
 export const TEXT_MODE_TO_TYPE: Record<TextModeType, 0 | 1 | 2> = {
     normal: IS_NORMAL,
     segmented: IS_SEGMENTED,

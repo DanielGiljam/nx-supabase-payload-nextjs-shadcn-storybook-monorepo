@@ -28,7 +28,7 @@ export const beforeSyncWithSearch: BeforeSync = async ({
         categories: [],
     };
 
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-magic-numbers -- [bulk suppress]
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions -- [bulk suppress]
     if (categories && Array.isArray(categories) && categories.length > 0) {
         // get full categories and keep a flattened copy of their most important properties
         try {
