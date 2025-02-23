@@ -33,6 +33,26 @@ const getJwtPayload = (accessToken: string) => {
     return jwtPayloadSchema.parse(verifyResult);
 };
 
+const emailWhiteListSchema = z
+    .string()
+    .min(1) // eslint-disable-line @typescript-eslint/no-magic-numbers
+    .transform((value, context) => {
+        try {
+            return JSON.parse(value);
+        } catch {
+            context.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: "Invalid JSON",
+            });
+            return z.NEVER;
+        }
+    })
+    .pipe(z.array(z.string().email()))
+    .optional();
+
+const getEmailWhiteList = () =>
+    emailWhiteListSchema.parse(process.env["EMAIL_WHITELIST"]);
+
 export const Users: CollectionConfig = {
     slug: "users",
     access: {
@@ -82,15 +102,23 @@ export const Users: CollectionConfig = {
                     });
                     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- user can indeed be null since array where it was taken from could be empty
                     if (user == null) {
-                        user = await payload.create({
-                            collection: "users",
-                            data: {
-                                email: jwtPayload.user_metadata.email,
-                                name: jwtPayload.user_metadata.name,
-                                supabaseUid: jwtPayload.sub,
-                                supabaseUserMetadata: jwtPayload.user_metadata,
-                            },
-                        });
+                        const emailWhiteList = getEmailWhiteList();
+                        if (
+                            emailWhiteList?.includes(
+                                jwtPayload.user_metadata.email,
+                            ) === true
+                        ) {
+                            user = await payload.create({
+                                collection: "users",
+                                data: {
+                                    email: jwtPayload.user_metadata.email,
+                                    name: jwtPayload.user_metadata.name,
+                                    supabaseUid: jwtPayload.sub,
+                                    supabaseUserMetadata:
+                                        jwtPayload.user_metadata,
+                                },
+                            });
+                        }
                     }
                     return {
                         user: {
