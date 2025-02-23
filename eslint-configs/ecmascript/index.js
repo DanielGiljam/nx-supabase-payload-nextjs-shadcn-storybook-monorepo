@@ -114,6 +114,7 @@ export default [
             ],
             "unicorn/no-null": "off",
             "unicorn/no-keyword-prefix": "off",
+            "unicorn/prefer-json-parse-buffer": "off",
             "unicorn/prevent-abbreviations": [
                 "error",
                 {
