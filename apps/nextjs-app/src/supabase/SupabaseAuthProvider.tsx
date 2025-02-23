@@ -11,6 +11,7 @@ export const SupabaseAuthProvider = ({
 }: {
     children: React.ReactNode;
 }) => {
+    const [loading, setLoading] = React.useState(true);
     const [session, setSession] = React.useState<Session | null>(null);
     React.useEffect(() => {
         const supabase = createClient();
@@ -19,6 +20,7 @@ export const SupabaseAuthProvider = ({
             data: {subscription},
         } = supabase.auth.onAuthStateChange((event, session) => {
             console.log("Supabase Auth state change", event, session);
+            setLoading(false);
             setSession(session);
             if (!hasFiredOnce && session == null) {
                 // this ensures other browser tabs/windows are informed about server-side sign out
@@ -40,7 +42,7 @@ export const SupabaseAuthProvider = ({
         };
     }, []);
     return (
-        <SupabaseAuthContext.Provider value={{session}}>
+        <SupabaseAuthContext.Provider value={{loading, session}}>
             {children}
         </SupabaseAuthContext.Provider>
     );

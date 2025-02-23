@@ -7,6 +7,7 @@ import {useTranslation} from "react-i18next";
 import {ReplaySubject, combineLatestWith} from "rxjs";
 
 import {createClient} from "~/supabase/client";
+import {useSupabaseAuth} from "~/supabase/useSupabaseAuth";
 
 declare global {
     interface Window {
@@ -180,10 +181,13 @@ const oneTapBlacklist = new Set(["/sign-in", "/sign-up"]);
 const GoogleOneTap = () => {
     const [prompted, setPrompted] = React.useState(false);
     const pathname = usePathname();
+    const {loading, session} = useSupabaseAuth();
     React.useEffect(() => {
         if (
             oneTapBlacklist.has(pathname) ||
             prompted ||
+            loading ||
+            session != null ||
             process.env.NEXT_PUBLIC_DISABLE_GOOGLE_ONE_TAP === "true"
         ) {
             return;
@@ -195,7 +199,7 @@ const GoogleOneTap = () => {
         return () => {
             prompt.unsubscribe();
         };
-    }, [prompted, pathname]);
+    }, [prompted, pathname, loading, session]);
     return null;
 };
 
