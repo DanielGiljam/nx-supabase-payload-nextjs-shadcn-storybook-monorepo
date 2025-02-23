@@ -104,10 +104,9 @@ export const Users: CollectionConfig = {
                     if (user == null) {
                         const emailWhiteList = getEmailWhiteList();
                         if (
-                            emailWhiteList == null ||
-                            emailWhiteList.includes(
+                            emailWhiteList?.includes(
                                 jwtPayload.user_metadata.email,
-                            )
+                            ) === true
                         ) {
                             user = await payload.create({
                                 collection: "users",
