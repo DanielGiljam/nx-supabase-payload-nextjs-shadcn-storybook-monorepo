@@ -70,7 +70,6 @@
         "lucide-react": "^0.462.0",
         "next": "15.0.4",
         "payload": "~3.5.0",
-        "payload-admin-bar": "^1.0.6",
         "prism-react-renderer": "^2.3.1",
         "react": "19.0.0-rc-65a56d0e-20241020",
         "react-cookie": "^7.2.2",
