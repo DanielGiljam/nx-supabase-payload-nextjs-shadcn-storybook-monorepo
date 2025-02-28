@@ -48,7 +48,7 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
         // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/prefer-nullish-coalescing -- [bulk suppress]
         alt = altFromResource || "";
 
-        source = `${getClientSideUrl()}${url}`;
+        source = url!;
     }
 
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/prefer-nullish-coalescing -- [bulk suppress]
