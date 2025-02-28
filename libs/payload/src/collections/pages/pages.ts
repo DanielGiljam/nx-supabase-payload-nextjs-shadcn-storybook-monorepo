@@ -40,7 +40,7 @@ export const Pages: CollectionConfig<"pages"> = {
     admin: {
         defaultColumns: ["title", "slug", "updatedAt"],
         livePreview: {
-            url: ({data}) => {
+            url: ({data, req}) => {
                 const path = generatePreviewPath({
                     slug:
                         // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- [bulk suppress]
@@ -48,17 +48,20 @@ export const Pages: CollectionConfig<"pages"> = {
                     collection: "pages",
                 });
 
-                return `${getServerSideUrl()}${path}`;
+                return `${getServerSideUrl(
+                    // only pass req.headers because rest of req object is untrustworthy (mocked or something)
+                    {headers: req.headers},
+                )}${path}`;
             },
         },
-        preview: (data) => {
+        preview: (data, {req}) => {
             const path = generatePreviewPath({
                 // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- [bulk suppress]
                 slug: typeof data?.["slug"] === "string" ? data["slug"] : "",
                 collection: "pages",
             });
 
-            return `${getServerSideUrl()}${path}`;
+            return `${getServerSideUrl(req)}${path}`;
         },
         useAsTitle: "title",
     },
