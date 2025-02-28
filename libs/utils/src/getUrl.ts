@@ -3,17 +3,17 @@
 import {canUseDom} from "./canUseDom";
 
 export const getServerSideUrl = () => {
-    let url = process.env["NEXT_PUBLIC_SERVER_URL"];
-
-    if (!url && process.env["VERCEL_PROJECT_PRODUCTION_URL"]) {
+    if (process.env["VERCEL_URL"]) {
+        return `https://${process.env["VERCEL_URL"]}`;
+    }
+    if (process.env["VERCEL_BRANCH_URL"]) {
+        return `https://${process.env["VERCEL_BRANCH_URL"]}`;
+    }
+    if (process.env["VERCEL_PROJECT_PRODUCTION_URL"]) {
         return `https://${process.env["VERCEL_PROJECT_PRODUCTION_URL"]}`;
     }
 
-    if (!url) {
-        url = "http://localhost:3000";
-    }
-
-    return url;
+    return process.env["NEXT_PUBLIC_SERVER_URL"] || "";
 };
 
 export const getClientSideUrl = () => {
