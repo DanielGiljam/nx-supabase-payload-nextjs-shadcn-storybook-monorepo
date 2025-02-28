@@ -1,7 +1,6 @@
 "use client";
 
 import {cn} from "@my-project/react-components/lib/utils";
-import {getClientSideUrl} from "@my-project/utils";
 import type {StaticImageData} from "next/image";
 import NextImage from "next/image";
 import type React from "react";
