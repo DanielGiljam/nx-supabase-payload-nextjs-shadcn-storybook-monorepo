@@ -23,8 +23,11 @@ export const getServerSideUrl = (request?: Partial<Request>) => {
     if (process.env["VERCEL_PROJECT_PRODUCTION_URL"]) {
         return `${protocol}//${process.env["VERCEL_PROJECT_PRODUCTION_URL"]}`;
     }
+    if (process.env["NEXT_PUBLIC_SERVER_URL"]) {
+        return process.env["NEXT_PUBLIC_SERVER_URL"];
+    }
 
-    return process.env["NEXT_PUBLIC_SERVER_URL"] || "";
+    throw new Error("Unable to get server-side URL");
 };
 
 export const getClientSideUrl = () => {
