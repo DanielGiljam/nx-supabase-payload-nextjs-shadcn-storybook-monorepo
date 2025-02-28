@@ -15,7 +15,10 @@
             "!{projectRoot}/.storybook/**/*",
             "!{projectRoot}/tsconfig.storybook.json"
         ],
-        "sharedGlobals": ["{workspaceRoot}/.github/workflows/checks-on-pr.yml"]
+        "sharedGlobals": [
+            "{workspaceRoot}/.github/workflows/checks-on-pr.yml",
+            "{workspaceRoot}/global.css"
+        ]
     },
     "plugins": [
         {
